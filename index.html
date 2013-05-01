@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+ <!--
+ jReply RGBA color picker demo
+ Copyright (c) 2013 jReply LLC http://jreply.com
+ -->
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>jReply RGBA Color Picker</title>
+  <link type="text/css" href="theme.css" rel="stylesheet"/>
+  <style type='text/css'>
+  .corps{padding:1em;border:none;font-family:arial}
+  .corps p{text-align:justify;}
+  .corps img{vertical-align:middle;}
+  .copyp{font-size:0.8em;color:#3f3f3f;text-align:left;}
+  .copyp a{color:#3f3f3f;}
+  h1{color:rgba(238,153,19,1);text-align:center;}
+  </style>
+  <link rel="stylesheet" type="text/css" href="ui.jreply_rgbapicker.css"> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <script src='jquery.ui.jreply_rgbapicker.js'></script>
+  <script type='text/javascript'>
+  function chosenColor(rgba)
+  {
+   var RGBA = rgba.substring(5);
+   RGBA = RGBA.substring(0,RGBA.length - 1);
+   $('#divSwatch').css('backgroundColor',rgba).data('rgba',RGBA);
+  }
+  
+  function makeColorPicker()
+  {
+   var RGBA = $('#divSwatch').data('rgba');
+   var options = {caption:'RGBA Color Picker',rgba:RGBA,callback:chosenColor};
+   $('<div>').jreply_rgbapicker(options);
+  }
+  
+  $(document).ready(function()
+  {
+   $('#test').bind('click',makeColorPicker).button();
+  });
+  </script>
+ </head>
+ <body class="ui-widget ui-widget-content corps">
+ <div>
+ <div id='jrp_democolordiv'>
+ <div id='divSwatch' class='jrp_cpsample2' style='background-color:rgba(238,153,19,1)' data-rgba='238,153,19,1'>
+ &nbsp;
+ </div>
+ </div>
+ <button id='test'>Change Color</button>
+ </div>
+ <h1>jReply RGBA Color Picker Plugin for jQuery UI</h1>
+ <p>
+ Despite the fact that modern browsers have such good support for RGBA color assignments the number of usable and configurable RGBA color pickers are rather thin on the ground. This color picker is intended
+ to help plug that gap.  It is easy to configure, has a simple point and click user interface and offers the ability to store up to 8 named colors for future use. It has been tested in Chrome, Firefox, Safari for Windows, Opera and IE and should work in all recent versions of these browsers.
+ </p>
+ <h3>Usage</h3>
+ <p>Typical usage would be as follows</p>
+ <ol>
+ <li>Add a suitably named button; e.g., &quot;Choose Color&quot;; where required in your application</li>
+ <li>Bind to the click event for that button</li>
+ <li>In the click event handler use the code
+ <pre>
+ function cbk(rgba)
+ {
+  /*
+   * the callback function gets the chosen color
+   * as the string rgba(R,G,B,A)
+   * typically you would use this string to update
+   * the color/background color for a page element
+   * in your application
+  */
+ }
+ 
+ var options = {caption:&quot;My RGBA Color Picker&quot;rgba:&quot;R,G,B,A&quot;callback:cbk};
+ $(&apos;&lt;div&gt;&apos;).jreply_rgbapicker(options);
+ </pre>
+ </li>
+ </ol>
+ <p class='copyp'>Copyright &copy; <a href='http://jreply.com'>jReply LLC</a></p>
+ </body>
+</html>
