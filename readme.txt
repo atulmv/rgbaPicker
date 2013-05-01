@@ -4,7 +4,7 @@ Released under the terms of the MIT license:
 
 http://opensource.org/licenses/MIT
 
-An configurable, easy to use RGBA color picker for
+A configurable, easy to use RGBA color picker for
 jQuery UI (http://jqueryui.com) which also offers
 the option of recording up to 8 named color presets
 for easy reuse.
