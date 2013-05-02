@@ -1,0 +1,32 @@
+{
+    "name": "rgbaPicker",
+    "title": "jQuery UI RGBA Color Picker",
+    "description": "jQuery UI plugin for selecting RGBA colors",
+    "keywords": [
+        "color",
+        "rgba"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Atul Vaidya"
+        
+    },
+    "maintainers": [
+        {
+            "name": "Atul Vaidya",
+            "email": "jreplyide@gmail.com",
+            "url": "http://jreply.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "homepage": "https://github.com/atulmv/rgbaPicker",
+    "dependencies": {
+        "jquery": ">=1.9.1",
+  	"jquery UI":">=1.10.2"
+    }
+}
